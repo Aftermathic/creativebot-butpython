@@ -1,3 +1,4 @@
+import os
 import asyncio
 import time as t
 import random
@@ -44,8 +45,6 @@ async def slots(ctx):
         bet = await bot.wait_for('message', check=check, timeout=15.0)
     except asyncio.TimeoutError:
         await ctx.send('You took too long to enter your bet.')
-    except ValueError:
-        await ctx.send("Your bet wasn't a number...")
     except:
         await ctx.send("Something went wrong.")
     else:
@@ -81,7 +80,6 @@ async def slots(ctx):
                 await ctx.send(row1[0] + row1[1] + row1[2] + "\n" + row2[0] + row2[1] + row2[2] + '\n' + row3[0] + row3[1] + row3[2] + "\n\nYou won! Your reward would have been **" + str(int(bet.content) * 2) + "** if this wasn't just a simulation!")
                 print("crossed win")
             else:
-                await ctx.send(row1[0] + row1[1] + row1[2] + "\n" + row2[0] + row2[1] + row2[2] + '\n' + row3[0] + row3[1] + row3[2] + "\n\nYou lost. Your reward would have been **" + str(int(bet.content) * 2) + "** if this wasn't just a simulation!")
+                await ctx.send(row1[0] + row1[1] + row1[2] + "\n" + row2[0] + row2[1] + row2[2] + '\n' + row3[0] + row3[1] + row3[2] + "\n\nYou lost. Your reward would have been **" + str(int(bet.content) * 2) + "** if this wasn't just a simulation.")
     
-
 bot.run(token)
