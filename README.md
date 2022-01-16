@@ -1,6 +1,7 @@
 # creativebot-butpython
-pip install the needed libaries.
 
-then go in to config.py and add your bot token.
+throw it in to https://replit.com
 
-then run main.py
+put in your bot token
+
+and then run main.py
